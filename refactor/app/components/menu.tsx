@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 
 export default function Menu() {
-  const [menuList, setMenuList] = useState(null); // Start as null to avoid rendering
+  const [menuList, setMenuList] = useState(null);
 
   useEffect(() => {
     async function fetchData() {
@@ -21,8 +21,9 @@ export default function Menu() {
     }
   }, [menuList]);
 
+  //Until data is obtained, don't render
   if (!menuList) {
-    return null; // Don't render anything until data is obtained
+    return null; 
   }
 
   return (
